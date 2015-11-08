@@ -1,0 +1,28 @@
+<head>
+  <title>resolutions</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Monthly Resolutions</h1>
+      <form class="new-resolution" action="" method="post">
+        <input type="text" name="title" value="" placeholder="A new resolution">
+        <input type="submit" name="submit" value="submit">
+      </form>
+    </header>
+    <ul>
+      {{#each resolutions}}
+        {{> resolution}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="resolution">
+  <li class="{{#if checked}}checked{{/if}}">
+    <input class="toggle-checked" type="checkbox" name="checkbox" checked="{{checked}}">
+    <span>{{title}}</span>
+    <button class="delete">Remove</button>
+  </li>
+</template>
